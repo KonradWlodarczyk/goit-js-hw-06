@@ -6,8 +6,13 @@ const handleSubmit = (event) => {
   } = event.currentTarget;
   if (email.value === "" || password.value === "") {
     return alert("Proszę uzupełnić wszystkie pola!");
-  } else console.log(`email: ${email.value}, Password: ${password.value}`);
-  event.currentTarget.reset();
+  } else {
+    const user = {
+      email: email.value,
+      password: password.value
+    }
+    console.log(user);
+  event.currentTarget.reset();}
 };
 
 form.addEventListener("submit", handleSubmit);
